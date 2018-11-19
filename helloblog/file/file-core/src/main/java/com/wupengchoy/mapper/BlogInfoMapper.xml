@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wupengchoy.mapper.BlogInfoMapper.xml">
+    <select id="getBlogInfo" resultType="com.wupengchoy.po.BlogInfoPO">
+    SELECT
+	bi.blog_id AS blogID,
+	bi.title AS title,
+	bc.content AS content,
+	bi.release_time AS releaseTime,
+	bi.view_count AS viewCount,
+	bi.like_count AS likeCount,
+	bi.author_id AS authorID,
+	ui.nick_name AS nickName
+	FROM
+	blog_info bi
+	LEFT JOIN user_info ui ON bi.author_id = ui.user_id
+	LEFT JOIN blog_content bc ON bc.blog_id = bi.blog_id
+    </select>
+</mapper>
