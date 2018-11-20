@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by Jeremy on 11/16/18.--test git
+ * Created by Jeremy on 11/16/18.
  */
 @RestController
 public class BlogInfoController {
