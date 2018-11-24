@@ -52,10 +52,16 @@
             <artifactId>blog-core</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>javax.servlet</groupId>-->
-            <!--<artifactId>javax.servlet-api</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>com.wupengchoy</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.wupengchoy</groupId>
+            <artifactId>swagger</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -66,27 +72,6 @@
             </plugin>
         </plugins>
 
-        <!-- 如果不添加此节点mybatis的mapper.xml文件都会被漏掉。 -->
-        <!--<resources>-->
-        <!--<resource>-->
-        <!--<directory>src/main/java</directory>-->
-        <!--<includes>-->
-        <!--<include>**/*.yml</include>-->
-        <!--<include>**/*.properties</include>-->
-        <!--<include>**/*.xml</include>-->
-        <!--</includes>-->
-        <!--<filtering>false</filtering>-->
-        <!--</resource>-->
-        <!--<resource>-->
-        <!--<directory>src/main/resources</directory>-->
-        <!--<includes>-->
-        <!--<include>**/*.yml</include>-->
-        <!--<include>**/*.properties</include>-->
-        <!--<include>**/*.xml</include>-->
-        <!--</includes>-->
-        <!--<filtering>false</filtering>-->
-        <!--</resource>-->
-        <!--</resources>-->
     </build>
 
 

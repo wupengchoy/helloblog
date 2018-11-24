@@ -26,6 +26,7 @@
 
 	<modules>
 		<module>blog</module>
+		<module>common</module>
 	</modules>
 
 	<!--<dependencies>-->

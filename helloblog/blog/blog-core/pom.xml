@@ -35,6 +35,13 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!--&lt;!&ndash; 使用数据源 &ndash;&gt;-->
+        <!--<dependency>-->
+        <!--<groupId>com.alibaba</groupId>-->
+        <!--<artifactId>druid</artifactId>-->
+        <!--<version>1.0.14</version>-->
+        <!--</dependency>-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -47,14 +54,28 @@
         </dependency>
     </dependencies>
 
-    <!--<build>-->
-    <!--<plugins>-->
-    <!--<plugin>-->
-    <!--<groupId>org.springframework.boot</groupId>-->
-    <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
-    <!--</plugin>-->
-    <!--</plugins>-->
-    <!--</build>-->
-
+    <build>
+        <!-- 如果不添加此节点mybatis的mapper.xml文件都会被漏掉。 -->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.yml</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.yml</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
 
 </project>

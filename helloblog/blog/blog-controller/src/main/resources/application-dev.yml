@@ -1,9 +1,10 @@
-datasource:
-  url: jdbc:mysql://127.0.0.1:3306/helloblog?setUnicode=true&characterEncoding=utf8&autoReconnect=true
-  username: root
-  password: mtt20091201wp
-  driver-class-name: com.mysql.jdbc.Driver
-mybatis:
-  mapper-locations: classpath:com.wupengchoy.blog.core.mapper/*.xml
-  type-aliases-package:
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/helloblog?setUnicode=true&characterEncoding=utf8&autoReconnect=true
+    username: root
+    password: mtt20091201wp
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#mybatis:
+#  mapper-locations: classpath:com.wupengchoy.blog.core.mapper/*.xml
+#  type-aliases-package: com.wupengchoy.blog.core.mapper
 

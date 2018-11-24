@@ -1,0 +1,33 @@
+
+#搭建SSM环境  
+[搭建环境参考](https://www.jianshu.com/p/4538791ab729)
+
+#如何启动Maven项目
+[如何启动Maven项目](https://www.cnblogs.com/Renyi-Fan/p/8148869.html)
+
+#mybatis
+- 必须添加注解EnableAutoConfiguration,自动关联相关映射
+- 接口上加上@Mapper
+- 配置文件中配置spring.datasource.url等信息
+- 在对应的项目中pom.xml文件<build>标签中加上如下，避免遗漏mapeer.xml
+ <!-- 如果不添加此节点mybatis的mapper.xml文件都会被漏掉。 -->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.yml</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.yml</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
