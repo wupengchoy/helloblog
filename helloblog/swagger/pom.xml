@@ -6,7 +6,6 @@
     <groupId>com.wupengchoy</groupId>
     <artifactId>swagger</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
 
     <name>swagger</name>
     <description>接口管理组件</description>

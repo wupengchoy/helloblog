@@ -7,6 +7,7 @@ import com.wupengchoy.util.ResponseUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +22,7 @@ public class BlogInfoController {
     @Autowired
     private BlogInfoService blogInfoService;
 
-    @RequestMapping(value = "bloginfoo", method = RequestMethod.POST)
+    @RequestMapping(value = "bloginfo", method = RequestMethod.POST)
     @ApiOperation(value = "查询blog信息", notes = "查询博客信息")
     public ResponseDTO<BlogInfoPO> getBlogInfo() {
         return ResponseUtils.toSuccess(blogInfoService.getBlogInfo());
