@@ -1,8 +1,0 @@
-spring:
-  profiles:
-    active: dev
-
-application:
-  name: blog
-server:
-  port: 8080

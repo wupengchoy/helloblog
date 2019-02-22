@@ -1,0 +1,12 @@
+
+spring:
+  application:
+    name: ribbon-test
+
+server:
+  port: 8181
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://yanzu:yanzu123@localhost:8380/eureka/

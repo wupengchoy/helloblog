@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: springcloud-study
+server:
+  port: 8280
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://yanzu:yanzu123@localhost:8380/eureka/
+#      ,http://yanzu:yanzu123@localhost2:8480/eureka/
+
+
+feign:
+  hystrix:
+    enabled: true
