@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: eureka-server-ha
+
+server:
+  port: 8480
+
+localhost: localhost2
+
+eureka:
+  client:
+    # 是否注册自身到其他eureka上
+    register-with-eureka: false
+    # 是否获取其他eureka注册信息
+    fetch-registry: false
+    # 与eureka的交互地址，多个使用逗号分隔
+    service-url:
+      defaultZone: http://yanzu:yanzu123@${localhost}:${server.port}/eureka/,http://yanzu:yanzu123@localhost:8380/eureka/
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: yanzu
+    password: yanzu123
+
+---
+spring:
+  profiles: localhost
+server:
+  port: 8380
+eureka:
+  instance:
+    host: localhost
+---
+spring:
+  profiles: localhost2
+server:
+  port: 8480
+eureka:
+  instance:
+    host: localhost2
+
+
