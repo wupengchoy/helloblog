@@ -8,12 +8,14 @@ import org.apache.commons.lang.StringUtils;
 public class FactoryMethodDemo {
     public static void main(String[] args) {
         //简单工厂模式，产品单一，工厂单一
-        Factory factory = new FactoryA();
-        factory.getFruit(Apple.class).say();
+//        Factory getFruit(Apple.class).say();
         //抽象工厂模式--多个工厂，多种产品
         Factory factoryB = new FactoryB();
         factoryB.getAnimal(Cow.class).say();
         factoryB.getFruit(Apple.class).say();
+        Factory factoryA = new FactoryA();
+        factoryA.getAnimal(Cow.class).say();
+        factoryA.getFruit(Apple.class).say();
 
     }
 
@@ -23,28 +25,27 @@ interface Factory {
     Fruit getFruit(Class<?> clz);
 
     Animal getAnimal(Class<?> clz);
+
+    default Object getInstance(Class<?> clz, String factoryName) {
+        try {
+            return clz.getConstructor(new Class[]{String.class}).newInstance(new Object[]{factoryName});
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
 
 class FactoryA implements Factory {
 
     @Override
     public Fruit getFruit(Class<?> clz) {
-        try {
-            return (Fruit) clz.getConstructor(new Class[]{String.class}).newInstance(new Object[]{this.getClass().getSimpleName()});
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+        return (Fruit) getInstance(clz, this.getClass().getSimpleName());
     }
 
     @Override
     public Animal getAnimal(Class<?> clz) {
-        try {
-            return (Animal) clz.getConstructor(new Class[]{String.class}).newInstance(new Object[]{this.getClass().getSimpleName()});
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+        return (Animal) getInstance(clz, this.getClass().getSimpleName());
     }
 }
 
@@ -52,22 +53,12 @@ class FactoryB implements Factory {
 
     @Override
     public Fruit getFruit(Class<?> clz) {
-        try {
-            return (Fruit) clz.getConstructor(new Class[]{String.class}).newInstance(new Object[]{this.getClass().getSimpleName()});
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+        return (Fruit) getInstance(clz, this.getClass().getSimpleName());
     }
 
     @Override
     public Animal getAnimal(Class<?> clz) {
-        try {
-            return (Animal) clz.getConstructor(new Class[]{String.class}).newInstance(new Object[]{this.getClass().getSimpleName()});
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+        return (Animal) getInstance(clz, this.getClass().getSimpleName());
     }
 }
 
@@ -77,13 +68,10 @@ interface Fruit {
 }
 
 class Apple implements Fruit {
-    private String source = "";
+    private String source;
 
     public Apple(String source) {
         this.source = source;
-    }
-
-    public Apple() {
     }
 
     @Override
@@ -97,10 +85,7 @@ interface Animal {
 }
 
 class Cow implements Animal {
-    private String source = "";
-
-    public Cow() {
-    }
+    private String source;
 
     public Cow(String source) {
         this.source = source;
