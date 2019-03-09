@@ -1,7 +1,7 @@
 package com.wupengchoy.mystudy.designpattern.structure;
 
 /**
- * 代理模式
+ * 代理模式：抽象主题，真实主题，代理类
  */
 public class ProxyDemo {
     public static void main(String[] args) {
