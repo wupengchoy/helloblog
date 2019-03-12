@@ -23,7 +23,6 @@ class RealObject implements ProxyInterface {
 
 class ProxyObject implements ProxyInterface {
     RealObject obj;
-
     @Override
     public void say() {
         if (obj == null) obj = new RealObject();
@@ -31,11 +30,9 @@ class ProxyObject implements ProxyInterface {
         obj.say();
         afterSay();
     }
-
     private void preSay() {
         System.out.println("proxy in...");
     }
-
     private void afterSay() {
         System.out.println("proxy out...");
     }

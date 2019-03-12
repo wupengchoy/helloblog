@@ -9,13 +9,13 @@ import java.util.Map;
 public class FlyweightDemo {
     public static void main(String[] args) {
         //以围棋为例，黑白棋子除颜色以外都具备相同的属性
-        //此处非享元角色为颜色，剩余未享元角色
+        //此处非享元角色为颜色，剩余为享元角色
         PiecesFactory factory = new PiecesFactory();
         Pieces pieces = factory.get(new PiecesColor("white"));
         pieces.show();
         pieces = factory.get(new PiecesColor("black"));
         pieces.show();
-        //是否不再创建，使用现有对象
+        //是否不再创建享元角色，使用现有对象
         pieces = factory.get(new PiecesColor("white"));
         pieces.show();
         pieces = factory.get(new PiecesColor("black"));
