@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 终结者模式：抽象中介者，具体中介者，抽象同事类，具体同事类
+ * 中介者模式：抽象中介者，具体中介者，抽象同事类，具体同事类
  * 注意---中介者模式和观察者模式的区别和关联
  */
 public class MediatorDemo {
