@@ -21,23 +21,17 @@ public class MediatorDemo {
 
 //抽象中介者
 interface Mediator {
-
-
     void register(Colleague colleague);
-
     void relay(Colleague colleague);
 }
 
 //抽象同事类
 abstract class Colleague {
     protected Mediator mediator;
-
     public void setMediator(Mediator mediator) {
         this.mediator = mediator;
     }
-
     abstract void receive();
-
     abstract void send();
 }
 

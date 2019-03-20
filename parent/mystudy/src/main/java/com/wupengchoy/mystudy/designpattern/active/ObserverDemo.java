@@ -51,7 +51,7 @@ abstract class Subject {
 
     abstract void notifyObservers();
 }
-
+//具体主题
 class ConcreteSubject extends Subject {
     @Override
     void notifyObservers() {
