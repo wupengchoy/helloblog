@@ -11,7 +11,7 @@ import java.util.function.Predicate;
 public class LambadaDemos {
     public static void main(String[] args) {
         //语法
-//        List<String> strs = new ArrayList<>();
+//        List<String> strs = new MyArrayList<>();
 //        strs.add("c");
 //        strs.add("a");
 //        strs.add("f");
