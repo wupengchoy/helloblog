@@ -16,7 +16,7 @@ public class MyArrayList<T> implements Iterable<T> {
         doClear();
     }
 
-    public void doClear() {
+    private void doClear() {
         size = 0;
         ensureCapcity(DEFAULT_CAPCITY);
     }
