@@ -77,9 +77,12 @@ public class ListTest {
         System.out.println(queue.dequeue());
         System.out.println(queue.dequeue());
         System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
 
         System.out.println(queue.size());
-        for (int i = 21; i <= 48; i++) {
+        for (int i = 21; i <= 43; i++) {
             queue.enqueue(i);
         }
         System.out.println(queue.size());
