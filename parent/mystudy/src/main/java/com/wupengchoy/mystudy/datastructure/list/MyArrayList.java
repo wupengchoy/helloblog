@@ -30,7 +30,7 @@ public class MyArrayList<T> implements Iterable<T> {
     }
 
     public void trimToSize() {
-        ensureCapcity(size());//去除数组中的控制，节省空间,
+        ensureCapcity(size());//去除数组中的空值，节省空间,
     }
 
     public T get(int index) {

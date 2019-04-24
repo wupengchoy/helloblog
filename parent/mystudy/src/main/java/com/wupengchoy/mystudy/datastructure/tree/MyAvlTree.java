@@ -56,7 +56,7 @@ public class MyAvlTree<T extends Comparable<? super T>> {
     private static final int ALLOW_IMBALANCE = 1;
 
     private AvlNode<T> balance(AvlNode<T> node) {
-        if (node == null) return node;
+        if (node == null) return null;
         //左子树高
         if (height(node.left) - height(node.right) > ALLOW_IMBALANCE) {
             if (height(node.left.left) >= height(node.left.right)) {

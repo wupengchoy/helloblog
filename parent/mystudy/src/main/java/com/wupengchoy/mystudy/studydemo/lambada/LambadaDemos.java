@@ -65,7 +65,7 @@ public class LambadaDemos {
     }
 
     public static <E> List<E> filter(List<E> list, Predicate<E> pred) {
-        List<E> result = new ArrayList<E>();
+        List<E> result = new ArrayList<>();
         for (E e : list) {
             if (pred.test(e)) {
                 result.add(e);
