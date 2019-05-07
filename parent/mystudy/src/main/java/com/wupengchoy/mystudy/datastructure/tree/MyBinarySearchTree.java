@@ -21,7 +21,7 @@ public class MyBinarySearchTree<T extends Comparable<? super T>> {
     }
 
     //根节点
-    BinaryNode<T> root;
+    private BinaryNode<T> root;
 
     public MyBinarySearchTree() {
         this.root = null;

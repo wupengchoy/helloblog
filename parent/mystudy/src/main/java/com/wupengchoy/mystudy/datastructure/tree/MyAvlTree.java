@@ -49,9 +49,6 @@ public class MyAvlTree<T extends Comparable<? super T>> {
      * 2.左子树长，且左子树的right长-->双旋(子树左旋，节点右旋)
      * 3.右子树长，且右子树的right长-->单左旋
      * 4.右子树长，且右子树的left长-->双旋(子树右旋，节点左旋)
-     *
-     * @param node
-     * @return
      */
     private static final int ALLOW_IMBALANCE = 1;
 
