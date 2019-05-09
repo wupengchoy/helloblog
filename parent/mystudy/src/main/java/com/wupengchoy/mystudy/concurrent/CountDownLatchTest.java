@@ -2,6 +2,9 @@ package com.wupengchoy.mystudy.concurrent;
 
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * 倒数计数阻塞线程，当计数为0的时候唤醒--只能使用一次
+ */
 public class CountDownLatchTest {
     public static void main(String[] args){
         CountDownLatch down = new CountDownLatch(2);

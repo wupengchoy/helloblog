@@ -2,6 +2,9 @@ package com.wupengchoy.mystudy.concurrent;
 
 import java.util.concurrent.Exchanger;
 
+/**
+ * 在两个线程之间交换数据，没有交换的时候第一个线程会阻塞
+ */
 public class ExchangerTest {
     public static void main(String[] args) {
 //        Exchanger<String> exchanger = new Exchanger<>();

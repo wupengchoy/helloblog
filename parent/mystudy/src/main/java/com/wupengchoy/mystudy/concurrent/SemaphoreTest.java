@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 
+/**
+ * 信号量--获取给定的信号量，如果获取不到则阻塞
+ */
 public class SemaphoreTest {
     public static void main(String[] args) {
         Semaphore semaphore = new Semaphore(1, false);
